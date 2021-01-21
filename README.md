@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Bem vindo! - FelipeBastosWeb
+permalink: /
 ---
 
 ## Formação
