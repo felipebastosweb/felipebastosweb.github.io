@@ -1,6 +1,6 @@
 ---
-layout: page
-title: "Bem vindo! - FelipeBastosWeb"
+layout: default
+title: Bem vindo! - FelipeBastosWeb
 ---
 
 ## Formação
