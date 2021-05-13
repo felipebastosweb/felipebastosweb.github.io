@@ -4,8 +4,15 @@
         <title>Site</title>
         <script src="main.js"></script>
         <script type="text/javascript">
-        var root = document.body
-        m.render(root, "Hello world")
+        var Hello = {
+    view: function() {
+        return m("main", [
+            m("h1", {class: "title"}, "My first app"),
+            m("button", "A button"),
+        ])
+    }
+}
+        m.mount(root, Hello)
         </script>
     </head>
     <body>
