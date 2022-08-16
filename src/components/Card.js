@@ -40,6 +40,9 @@ export class Card {
                         // TODO: salvar remotamente o like
                         // TODO: gerenciar estado do like para mudar o icone
                         m("a.btn.shadow-sm", {href: "#!/project/id/like", title: "Clique se gostar do projeto"}, m("i.bi.bi-hand-thumbs-up")),
+                        // TODO: abrir modal com qualificação do produto (estrelas e comentário)
+                        // TODO: salvar votos na qualificação do produto
+                        m("a.btn.shadow-sm", {href: "#!/product/id"}, m("i.bi.bi-star", "")),
                     ]),
                 ]),
             ]),
