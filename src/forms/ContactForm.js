@@ -4,9 +4,7 @@ import {FormLabel, FormInput, FormTextarea, FormSelectOptions} from "./Form"
 class ContactEmail {
     constructor(vnode) {}
     view(vnode) {
-        return m(
-            ".form-group.col-xs-12.col-md-6", 
-            [
+        return m(".form-group.col-xs-12.col-md-6", [
                 m(FormLabel, {body: "E-mail"}),
                 m(
                     FormInput, {
@@ -99,9 +97,10 @@ export class ContactForm {
     constructor(vnode) {}
     onSubmit(vnode) {
         if (vnode.attrs.email) {
+            // TODO: change request to CartService
             m.request({
                 method: "POST",
-                url: "/api/contact",
+                url: "/api/cart",
                 data: {
                     email: vnode.attrs.email,
                     phone: vnode.attrs.phone,
@@ -113,10 +112,8 @@ export class ContactForm {
     }
 
     view(vnode) {
-        return m(
-            "form#contact-form.row",
-            [
-                m(".form-group", m("h1", "Entrar em Contato")),
+        return m("form#contact-form.row", [
+            m(".form-group", m("h1", "Entrar em Contato")),
                 m(ContactEmail),
                 m(ContactPhone),
                 m(ContactSubject),
@@ -124,7 +121,6 @@ export class ContactForm {
                 m(".form-group", m("p", "")),
                 // buttons
                 m(FormButtonGroup)
-            ]
-        )
+        ])
     }
 }

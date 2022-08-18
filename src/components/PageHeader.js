@@ -15,6 +15,10 @@ export class NavPage {
                 m("a.nav-link", {href: "#!/partnership"}, "Parcerias"),
                 m("a.nav-link", {href: "#!/p/about"}, "Sobre"),
                 m("a.nav-link", {href: "#!/p/contact"}, "Contato"),
+                m("a.nav-link", {href: "#!/cart"}, [
+                    m("i.bi.bi-cart"),
+                    m("span.badge.bg-danger.rounded-pill.position-absolute.top-0.border.border-light", "0")
+                ]),
             ]),
         ]);
     }

@@ -1,6 +1,11 @@
-import m from "mithril"
+import { Model } from "./Model"
 
-export class ContactModel {
-    constructor() {}
-
+export class Contact extends Model {
+    constructor(self) {
+        super(self)
+        this.email = self.email
+        this.telephone = self.telephone
+        this.fax = self.fax
+        this.site = self.site
+    }
 }

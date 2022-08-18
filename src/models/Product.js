@@ -1,8 +1,12 @@
+import { Model } from "./Model"
 
-export class Product {
-    constructor(vnode) {
-        this.title = vnode.title
-        this.description = vnode.description
-        this.price = vnode.price
+
+export class Product extends Model {
+    constructor(self) {
+        super(self)
+        this.title = self.title
+        this.description = self.description
+        this.price = self.price
     }
+    
 }

@@ -8,6 +8,7 @@ import { ProjectsPage } from "./pages/Projects"
 import { PartnershipPage } from "./pages/Partnership"
 import { ContactPage } from "./pages/Contact"
 import { ShopPage } from "./pages/Shop"
+import { CartPage } from "./pages/Cart"
 
 
 m.route(root, "/", {
@@ -15,6 +16,7 @@ m.route(root, "/", {
     "/p/about": AboutPage,
     "/projects": ProjectsPage,
     "/shop": ShopPage,
+    "/cart": CartPage,
     "/partnership": PartnershipPage,
     "/p/contact": ContactPage,
 })

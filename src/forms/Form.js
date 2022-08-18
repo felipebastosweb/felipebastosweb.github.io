@@ -23,6 +23,8 @@ export class FormInput {
                 placeholder: vnode.attrs.placeholder,
                 required: vnode.attrs.required,
                 readonly: vnode.attrs.readonly,
+                value: vnode.attrs.value,
+                min: vnode.attrs.min
             }
         )
     }
