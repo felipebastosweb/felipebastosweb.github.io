@@ -2,12 +2,11 @@ import m from "mithril"
 
 export class FormLabel {
     constructor(self) {
-        this.for = self.for
+        if (self.for != undefined) this.for = self.for
         this.body = self.body
     }
     view(vnode) {
-        return m("label.form-label",
-            {
+        return m("label.form-label", {
                 for: this.for
             },
             this.body
@@ -16,7 +15,9 @@ export class FormLabel {
 }
 
 const InputType = {
+    hidden: "hidden",
     text: "text",
+    password: "password",
     number: "number",
     email: "email",
     phone: "phone",
@@ -44,9 +45,26 @@ export class FormInput {
     }
 }
 
+export class InputHidden extends FormInput {
+    constructor(self) {
+        self.type = FormType.hidden
+        super(self)
+    }
+    view = () => super.view()
+}
+
 export class InputText extends FormInput {
     constructor(self) {
         self.type = FormType.text
+        super(self)
+    }
+    view = () => super.view()
+}
+
+
+export class InputPassword extends FormInput {
+    constructor(self) {
+        self.type = FormType.password
         super(self)
     }
     view = () => super.view()
