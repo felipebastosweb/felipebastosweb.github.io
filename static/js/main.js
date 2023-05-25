@@ -24,6 +24,7 @@ class Form
     }
 }
 
+
 class Page
 {
     constructor(vnode)
@@ -92,24 +93,157 @@ class UserRegisterForm
     }
 }
 
+/* Page Components */
+
+
+export class NavHeader
+{
+    constructor(vnode) {}
+    view(vnode) {
+        return m("section.row", [
+            m("nav.nav", [
+                m("a.nav-link", {href: "#!/"}, "Início"),
+                //m("a.nav-link", {href: "#!/shop"}, "Loja"),
+                //m("a.nav-link", {href: "#!/projects"}, "Projetos"),
+                //m("a.nav-link", {href: "#!/partnership"}, "Parcerias"),
+                //m("a.nav-link", {href: "#!/p/about"}, "Sobre"),
+                //m("a.nav-link", {href: "#!/p/contact"}, "Contato"),
+                /*
+                m("a.nav-link", {href: "#!/cart"}, [
+                    m("i.bi.bi-cart"),
+                    m("span.badge.bg-danger.rounded-pill.position-absolute.top-0.border.border-light", "0")
+                ]),
+                */
+            ]),
+        ]);
+    }
+}
+
+class HeroHeader
+{
+    constructor(vnode){}
+    view(vnode)
+    {
+        return m("article", {'class': "px-4.py-5.my-5.text-center"}, [
+            //<img class="d-block mx-auto mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+            m("h1", {'class': "display-5.fw-bold.text-body-emphasis"}, "FelipeBastosWeb"),
+            m("div", {'class': "col-lg-6.mx-auto"}, [
+                m("p", {'class': "lead.mb-4"}, "Programador e Analista de Sistemas")
+            ])
+            /*
+            <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Primary button</button>
+        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>
+      </div>
+    </div>
+            */
+        ])
+    }
+}
+
+class JumbotronHeader
+{
+    constructor(vnode) {}
+    view(vnode) {
+        return m("section.row", {style: "padding-top: 20px; padding-bottom: 20px;"}, [
+            m(".col-12", [
+                m("h1.text-center", "FelipeBastosWeb"), [
+                    m("p.lead.text-center", "Analista, Desenvolvedor e Projetista de Sistemas e Aplicativos")
+                ]
+            ]),
+        ]);
+    }
+}
+
+
+class NavFooter {
+    constructor(vnode) {}
+    view(vnode) {
+        return m(".row", [
+            m("section.col-md-3.col-sm-4.col-xs-6", [
+                m("h3", "Sobre o Site"),
+                m("nav.nav.flex-column", [
+                    m("a.nav-link", {href: "#!/"}, "Início"),
+                    //m("a.nav-link", {href: "#!/p/about"}, "Sobre"),
+                    //m("a.nav-link", {href: "#!/p/concact"}, "Contato"),
+                ])
+            ]),
+            m("section.col-md-3.col-sm-4.col-xs-6", [
+                m("h3", "Interação"),
+                m("nav.nav.flex-column", [
+                    //m("a.nav-link", {href: "#!/shop"}, "Shop"),
+                    //m("a.nav-link", {href: "#!/projects"}, "Projects"),
+                    //m("a.nav-link", {href: "#!/partnership"}, "Partnership"),
+                ]),
+            ]),
+            m("section.col-md-6.col-sm-4.col-xs-12", [
+                m("h3", "Conteúdo Profissional"),
+                m(".row", [
+                    m(".col-md-6.col-xs-12", [
+                        m("nav.nav.flex-column", [
+                            m("a.nav-link", {href: "https://github.com/felipebastosweb", target: "_blank"}, "Github"),
+                            m("a.nav-link", {href: "https://www.linkedin.com/in/felipebastosweb/", target: "_blank"}, "LinkedIn"),
+                            m("a.nav-link", {href: "https://medium.com/@felipebastosweb", target: "_blank"}, "Medium"),
+                        ])
+                    ]),
+                    m(".col-md-6.col-xs-12", [
+                        m("nav.nav.flex-column", [
+                            m("a.nav-link", {href: "https://instagram.com/felipebastosweb", target: "_blank"}, "Instagram"),
+                            m("a.nav-link", {href: "https://facebook.com/felipebastosweb", target: "_blank"}, "Facebook"),
+                            m("a.nav-link", {href: "https://tiktok.com/@felipebastosweb", target: "_blank"}, "Tiktok"),
+                        ]),
+                    ]),
+                ]),
+            ]),
+        ]);
+    }
+}
+
+class BottomFooter {
+    constructor(vnode) {}
+    view(vnode) {
+        return m(".row", {style: "padding-top: 20px; padding-bottom: 20px"}, [
+            m(".col-6", [
+                m("p", "2023 - FelipeBastosWeb - Todos os direitos reservados"),
+            ]),
+            m(".col-6", [
+                m("p", [
+                    "Desenvolvido por ",
+                    m("a", {href:"https://felipebastosweb.github.io", target: "_blank" }, "FelipeBastosWeb" ),
+                    " (atualizado em 25/05/2023)"
+                ])
+            ]),
+            m(".col-12", [
+                m("address", "Rua Vista do Mar, 64 - apto 004, Pirajá, Salvador-BA, Brasil."),
+            ]),
+        ]);
+    }
+}
+
+
 /* Pages */
 
 class WelcomePage
 {
-    contructor(vnode)
-    {
-        //
-    }
+    contructor(vnode){}
 
     view(vnode)
     {
         return m("page", [
-            m("header", {'class': "container-fluid"}, []),
+            m("header", {'class': "container-fluid"}, [
+                m(NavHeader),
+                m(HeroHeader)
+            ]),
             m("article", {'class': "container-fluid"}, [
                 m(UserRegisterForm),
                 m(UserLoginForm)
             ]),
-            m("footer", {'class': "container-fluid"}, []),
+            m("footer", {'class': "container-fluid"}, [
+                m(NavFooter),
+                m(BottomFooter)
+            ]),
         ]);
     }
 }
@@ -135,7 +269,7 @@ class HomePage
 
 
 
-
+/* main execute */
 
 m.route(root, "/", {
     "/": WelcomePage,
