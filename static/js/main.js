@@ -16,11 +16,11 @@ class Card
 
 class Form
 {
-    fields;
+    //fields;
 
     constructor(vnode)
     {
-        this.method = vnode.attrs.items['method'];
+        //this.method = vnode.attrs.items['method'];
     }
 }
 
@@ -44,17 +44,17 @@ class UserLoginForm extends Form
 
     view(vnode)
     {
-        return m("form", {'id': "login-form", 'class': ".row"}, [
+        return m("form", {'id': "login-form", 'class': "row"}, [
             m(".mb-3", [
                 m("label", {'class': "form-label"}, "Username"),
-                m("input", {'type': "text", 'placeHolder': "Username", 'class': "form-input"})
+                m("input", {'type': "text", 'placeHolder': "Username", 'class': "form-control"})
             ]),
             m(".mb-3", [
                 m("label", {'class': "form-label"}, "Password"),
-                m("input", {'type': "password", 'placeHolder': "Password", 'class': "form-input"})
+                m("input", {'type': "password", 'placeHolder': "Password", 'class': "form-control"})
             ]),
             m(".mb-3", [
-                m("label", {'class': "btn.btn-success"}, "Login"),
+                m("label", {'class': "btn btn-success"}, "Login"),
             ]),
         ]);
     }
@@ -69,25 +69,25 @@ class UserRegisterForm
 
     view(vnode)
     {
-        return m("form", {'id': "register-form", 'class': ".row"}, [
+        return m("form", {'id': "register-form", 'class': "row"}, [
             m(".mb-3", [
                 m("label", {'class': "form-label"}, "Username"),
-                m("input", {'type': "text", 'placeHolder': "Username", 'class': "form-input"})
+                m("input", {'type': "text", 'placeHolder': "Username", 'class': "form-control"})
             ]),
             m(".mb-3", [
                 m("label", {'class': "form-label"}, "Password"),
-                m("input", {'type': "password", 'placeHolder': "Your Password", 'class': "form-input"})
+                m("input", {'type': "password", 'placeHolder': "Your Password", 'class': "form-control"})
             ]),
             m(".mb-3", [
                 m("label", {'class': "form-label"}, "E-mail"),
-                m("input", {'type': "text", 'placeHolder': "Your E-mail", 'class': "form-input"})
+                m("input", {'type': "text", 'placeHolder': "Your E-mail", 'class': "form-control"})
             ]),
             m(".mb-3", [
                 m("label", {'class': "form-label"}, "Telephone"),
-                m("input", {'type': "text", 'placeHolder': "Telephone", 'class': "form-input"})
+                m("input", {'type': "text", 'placeHolder': "Telephone", 'class': "form-control"})
             ]),
             m(".mb-3", [
-                m("label", {'class': "btn.btn-success"}, "Register"),
+                m("label", {'class': "btn btn-success"}, "Register"),
             ]),
         ]);
     }
@@ -123,11 +123,11 @@ class HeroHeader
     constructor(vnode){}
     view(vnode)
     {
-        return m("article", {'class': "px-4.py-5.my-5.text-center"}, [
+        return m("article", {'class': "px-4 py-5 my-5 text-center"}, [
             //<img class="d-block mx-auto mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-            m("h1", {'class': "display-5.fw-bold.text-body-emphasis"}, "FelipeBastosWeb"),
-            m("div", {'class': "col-lg-6.mx-auto"}, [
-                m("p", {'class': "lead.mb-4"}, "Programador e Analista de Sistemas")
+            m("h1", {'class': "display-5 fw-bold text-body-emphasis"}, "FelipeBastosWeb"),
+            m("div", {'class': "col-lg-6 mx-auto"}, [
+                m("p", {'class': "lead mb-4"}, "Programador e Analista de Sistemas")
             ])
             /*
             <div class="col-lg-6 mx-auto">
@@ -270,7 +270,7 @@ class HomePage
 
 /* main execute */
 
-m.route(root, "/", {
+m.route(document.body, "/", {
     "/": WelcomePage,
     "/home": HomePage,
 })
