@@ -280,8 +280,16 @@ class LandingLevel extends Level
                 m(LandingHeroHeader)
             ]),
             m("article", {class: "container-fluid"}, [
-                m(UserRegisterForm),
-                m(UserLoginForm)
+                m(".row", [
+                    m(".col-6", [
+                        m("h3", "Cadastrar"),
+                        m(UserRegisterForm)
+                    ]),
+                    m(".col-6", [
+                        m("h3", "Entrar"),
+                        m(UserLoginForm)
+                    ])
+                ]),
             ]),
             m("footer", {class: "container-fluid"}, [
                 m(NavFooter),
