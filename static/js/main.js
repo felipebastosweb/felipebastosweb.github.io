@@ -1,4 +1,41 @@
+/* Start Game Driven Design */
 
+class Actor
+{
+    username;
+    constructor(){}
+}
+
+class Player extends Actor
+{
+    constructor(vnode)
+    {
+        username = vnode.attrs.username;
+    }
+}
+
+class Level
+{
+    sceneActive;
+    sceneList = {};
+
+    constructor(vnode){
+        this.actor = vnode.attrs.actor;
+    }
+    moveToScene(index)
+    {
+        this.sceneActive = index;
+    }
+}
+
+class Scene
+{
+    constructor(vnode){
+        this.actor = vnode.attrs.actor;
+    }
+}
+
+/* End Game Driven Design */
 
 /***
  * oninit, oncreate, onupdate
@@ -17,11 +54,10 @@ class Card
 
 class Form
 {
-    //fields;
-
     constructor(vnode)
     {
-        //this.method = vnode.attrs.items['method'];
+        this.method = vnode.attrs.method;
+        this.action = vnode.attrs.action;
     }
 }
 
@@ -40,22 +76,22 @@ class UserLoginForm extends Form
 {
     contructor(vnode)
     {
-        //
+        //super({method: 'post'});
     }
 
     view(vnode)
     {
-        return m("form", {'id': "login-form", 'class': "row"}, [
+        return m("form", {id: "login-form", class: "row", mehod: this.method}, [
             m(".mb-3", [
-                m("label", {'class': "form-label"}, "Username"),
-                m("input", {'type': "text", 'placeHolder': "Username", 'class': "form-control"})
+                m("label", {class: "form-label"}, "Username"),
+                m("input", {type: "text", placeHolder: "Username", class: "form-control"})
             ]),
             m(".mb-3", [
-                m("label", {'class': "form-label"}, "Password"),
-                m("input", {'type': "password", 'placeHolder': "Password", 'class': "form-control"})
+                m("label", {class: "form-label"}, "Password"),
+                m("input", {type: "password", placeHolder: "Password", class: "form-control"})
             ]),
             m(".mb-3", [
-                m("label", {'class': "btn btn-success"}, "Login"),
+                m("label", {class: "btn btn-success"}, "Login"),
             ]),
         ]);
     }
@@ -70,35 +106,37 @@ class UserRegisterForm
 
     view(vnode)
     {
-        return m("form", {'id': "register-form", 'class': "row"}, [
+        return m("form", {id: "register-form", class: "row"}, [
             m(".mb-3", [
-                m("label", {'class': "form-label"}, "Username"),
-                m("input", {'type': "text", 'placeHolder': "Username", 'class': "form-control"})
+                m("label", {class: "form-label"}, "Username"),
+                m("input", {type: "text", placeHolder: "Username", class: "form-control"})
             ]),
             m(".mb-3", [
-                m("label", {'class': "form-label"}, "Password"),
-                m("input", {'type': "password", 'placeHolder': "Your Password", 'class': "form-control"})
+                m("label", {class: "form-label"}, "Password"),
+                m("input", {type: "password", placeHolder: "Your Password", class: "form-control"})
             ]),
             m(".mb-3", [
-                m("label", {'class': "form-label"}, "E-mail"),
-                m("input", {'type': "text", 'placeHolder': "Your E-mail", 'class': "form-control"})
+                m("label", {class: "form-label"}, "E-mail"),
+                m("input", {type: "text", placeHolder: "Your E-mail", class: "form-control"})
             ]),
             m(".mb-3", [
-                m("label", {'class': "form-label"}, "Telephone"),
-                m("input", {'type': "text", 'placeHolder': "Telephone", 'class': "form-control"})
+                m("label", {class: "form-label"}, "Telephone"),
+                m("input", {type: "text", placeHolder: "Telephone", class: "form-control"})
             ]),
             m(".mb-3", [
-                m("label", {'class': "btn btn-success"}, "Register"),
+                m("label", {class: "btn btn-success"}, "Register"),
             ]),
         ]);
     }
 }
 
-/* Page Components */
+/* Level Components */
 
-class NavHeader
+class LandingNavHeader
 {
-    constructor(vnode) {}
+    constructor(vnode) {
+        this.actor = vnode.attrs.actor;
+    }
     view(vnode) {
         return m("section.row", [
             m("nav.nav", [
@@ -119,16 +157,19 @@ class NavHeader
     }
 }
 
-class HeroHeader
+class LandingHeroHeader
 {
     constructor(vnode){}
     view(vnode)
     {
-        return m("article", {'class': "px-4 py-5 my-5 text-center"}, [
+        return m("article", {class: "px-4 py-5 my-5 text-center"}, [
             //<img class="d-block mx-auto mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-            m("h1", {'class': "display-5 fw-bold text-body-emphasis"}, "FelipeBastosWeb"),
-            m("div", {'class': "col-lg-6 mx-auto"}, [
-                m("p", {'class': "lead mb-4"}, "Programador e Analista de Sistemas")
+            m("h1", {class: "display-5 fw-bold text-body-emphasis"}, [
+                m("span", {style: "background-color: #338FFF"}, "FelipeBastos"),
+                m("span", "Web")
+            ]),
+            m("div", {class: "col-lg-6 mx-auto"}, [
+                m("p", {class: "lead mb-4"}, "Programador e Analista de Sistemas")
             ])
             /*
             <div class="col-lg-6 mx-auto">
@@ -225,22 +266,24 @@ class BottomFooter {
 
 /* Pages */
 
-class WelcomePage
+class LandingLevel extends Level
 {
-    contructor(vnode){}
+    contructor(vnode){
+        //super({actor: vnode.attrs.actor});
+    }
 
     view(vnode)
     {
         return m("page", [
-            m("header", {'class': "container-fluid"}, [
-                m(NavHeader),
-                m(HeroHeader)
+            m("header", {class: "container-fluid"}, [
+                m(LandingNavHeader, {actor: vnode.attrs.actor}),
+                m(LandingHeroHeader)
             ]),
-            m("article", {'class': "container-fluid"}, [
+            m("article", {class: "container-fluid"}, [
                 m(UserRegisterForm),
                 m(UserLoginForm)
             ]),
-            m("footer", {'class': "container-fluid"}, [
+            m("footer", {class: "container-fluid"}, [
                 m(NavFooter),
                 m(BottomFooter)
             ]),
@@ -249,19 +292,19 @@ class WelcomePage
 }
 
 
-class HomePage
+class HomeLevel extends Level
 {
     contructor(vnode)
     {
-        //
+        this.actor = vnode.attrs.actor;
     }
 
     view(vnode)
     {
         return m("page", [
-            m("header", {'class': "container-fluid"}, []),
-            m("article", {'class': "container-fluid"}, []),
-            m("footer", {'class': "container-fluid"}, []),
+            m("header", {class: "container-fluid"}, []),
+            m("article", {class: "container-fluid"}, []),
+            m("footer", {class: "container-fluid"}, []),
         ]);
     }
 }
@@ -276,20 +319,26 @@ class HomePage
 // Game Design https://agilebygamedesign.github.io/
 class Application // Game
 {
-    // lista de levels do usuário (página)
-    levelList = [];
+    
 
     constructor(vnode)
     {
-        //
+        // lista de levels do usuário (página)
+        this.levelList = {};
+    }
+
+    loadContent()
+    {
+        this.levelList = {
+            "/": LandingLevel,
+            "/home": HomeLevel,
+        }
     }
 
     run()
     {
-        return m.route(document.body, "/", {
-            "/": WelcomePage,
-            "/home": HomePage,
-        })
+        this.loadContent();
+        return m.route(document.body, "/", this.levelList)
     }
 }
 
