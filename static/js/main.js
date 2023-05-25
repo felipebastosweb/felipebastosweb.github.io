@@ -1,4 +1,5 @@
 
+
 /***
  * oninit, oncreate, onupdate
  * https://mithril.js.org/lifecycle-methods.html
@@ -270,7 +271,34 @@ class HomePage
 
 /* main execute */
 
+
+
+// Game Design https://agilebygamedesign.github.io/
+class Application // Game
+{
+    // lista de levels do usuário (página)
+    levelList = [];
+
+    constructor(vnode)
+    {
+        //
+    }
+
+    run()
+    {
+        return m.route(document.body, "/", {
+            "/": WelcomePage,
+            "/home": HomePage,
+        })
+    }
+}
+
+app = new Application()
+app.run()
+
+/*
 m.route(document.body, "/", {
     "/": WelcomePage,
     "/home": HomePage,
 })
+*/
