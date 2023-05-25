@@ -95,8 +95,7 @@ class UserRegisterForm
 
 /* Page Components */
 
-
-export class NavHeader
+class NavHeader
 {
     constructor(vnode) {}
     view(vnode) {
