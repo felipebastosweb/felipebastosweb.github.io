@@ -70,7 +70,7 @@ class Page
     }
 }
 
-/* Forms */
+/* LandingScene Components */
 
 class UserLoginForm extends Form
 {
@@ -129,6 +129,9 @@ class UserRegisterForm
         ]);
     }
 }
+
+
+/* End LandingScene Components */
 
 /* Level Components */
 
@@ -198,6 +201,16 @@ class JumbotronHeader
     }
 }
 
+class LandingHeader
+{
+    view(vnode)
+    {
+        return m("header", {class: "container-fluid"}, [
+            m(LandingNavHeader, {actor: vnode.attrs.actor}),
+            m(LandingHeroHeader)
+        ]);
+    }
+}
 
 class NavFooter {
     constructor(vnode) {}
@@ -264,21 +277,88 @@ class BottomFooter {
 }
 
 
-/* Pages */
-
-class LandingLevel extends Level
-{
-    contructor(vnode){
-        //super({actor: vnode.attrs.actor});
+class ContactForm {
+    constructor(vnode) {}
+    onSubmit(vnode) {
+        if (vnode.attrs.email) {
+            // TODO: change request to CartService
+            m.request({
+                method: "POST",
+                url: "/api/cart",
+                data: {
+                    email: vnode.attrs.email,
+                    phone: vnode.attrs.phone,
+                    subject: vnode.attrs.subject,
+                    message: vnode.attrs.message,
+                }
+            })
+        }
     }
 
+    view(vnode) {
+        return m("form#contact-form.row", [
+            m(".form-group", m("h1", "Entrar em Contato")),
+            m(".form-group.col-xs-12.col-md-6", [
+                m("label.form-label", "E-mail"),
+                m("input", {
+                    name: "email",
+                    type: "email",
+                    placeholder: "Seu E-mail"
+                })
+            ]),
+            m(".form-group.col-xs-12.col-md-6", [
+                m('label.form-label', "Telefone"),
+                m("input",  {
+                    name: "phone",
+                    type: "tel",
+                    placeholder: "Seu Telefone"
+                })
+            ]),
+            m(".form-group.col-xs-12.col-md-6", [
+                m('label.form-label', "Assunto"),
+                m("input",  {
+                    name: "subject",
+                    type: "text",
+                    placeholder: "Assunto"
+                })
+            ]),
+            m(".form-group.col-12", [
+                m("label.form-label", "Conteúdo"),
+                m("textarea.form-control", {
+                    name: "message",
+                    rows: "5",
+                    placeholder: "Sua mensagem aqui"
+                })
+            ]),
+            m(".form-group", m("p", "")),
+            // buttons
+            m(".form-group.col-12", [
+                m(
+                    "button[type=button].btn.btn-outline-secondary.col-6",
+                    "Cancelar"
+                ),
+                m(
+                    "button[type=submit].btn.btn-success.col-6",
+                    "Enviar"
+                )
+            ])
+        ])
+    }
+}
+
+
+/* Pages */
+
+
+class LandingScene extends Scene
+{
+    constructor(vnode)
+    {
+        super(vnode);
+    }
     view(vnode)
     {
-        return m("page", [
-            m("header", {class: "container-fluid"}, [
-                m(LandingNavHeader, {actor: vnode.attrs.actor}),
-                m(LandingHeroHeader)
-            ]),
+        return m("section", [
             m("article", {class: "container-fluid"}, [
                 m(".row", [
                     m(".col-6", [
@@ -291,6 +371,49 @@ class LandingLevel extends Level
                     ])
                 ]),
             ]),
+            m("article.container-fluid", [
+                m("section.row", [
+                    m(".col-12.alert.alert-danger", [
+                        m("h2", "Trabalho em Progresso"),
+                        m("p", "Esta página está em desenvolvimento. Em breve você poderá comprar pacotes de software/aplicativos."),
+                    ]),
+                ]),
+                m("section.row", [
+                    m(ContactForm)
+                ]) 
+            ])
+        ]);
+    }
+}
+
+class ContactScene {
+    constructor(vnode) {}
+    view(vnode) {
+        return 
+    }
+}
+
+class LandingLevel extends Level
+{
+    contructor(vnode){
+        //super({actor: vnode.attrs.actor});
+        this.scenes = {
+            start: LandingScene
+        };
+        this.sceneActive = this.scenes.start;
+    }
+
+    oninit(vnode)
+    {
+        //alert(this.scenes.length);
+    }
+
+    view(vnode)
+    {
+        return m("page", [
+            m(LandingHeader),
+            m(LandingScene, vnode),
+            //m(this.sceneActive, vnode),
             m("footer", {class: "container-fluid"}, [
                 m(NavFooter),
                 m(BottomFooter)
