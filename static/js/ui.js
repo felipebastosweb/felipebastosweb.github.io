@@ -4,9 +4,16 @@
 
 class CardView
 {
-    constructor(vnode)
+    view(vnode)
     {
-        //
+        return m("div.card", [
+            m("img.card-img-top", {src: vnode.attrs.src}),
+            m(".card-body", [
+                m("h5.card-title", m("a", {href: vnode.attrs.url, target: "_blank"}, vnode.attrs.title)),
+                m("h6.card-subtitle.mb-2.text-body-secondary", vnode.attrs.subtitle),
+                m("p.card-text", vnode.attrs.text)
+            ])
+        ]);
     }
 }
 
