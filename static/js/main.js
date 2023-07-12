@@ -2,15 +2,16 @@
 
 class PostRepository
 {
+    static posts = [
+        {
+            title: "",
+            slug: "",
+            content: ""
+        }
+    ];
+    
     constructor(vnode)
     {
-        this.posts = [
-            {
-                title: "",
-                slug: "",
-                content: ""
-            }
-        ];
     }
 }
 
