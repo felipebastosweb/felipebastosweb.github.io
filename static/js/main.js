@@ -9,7 +9,7 @@ class PostRepository
             content: ""
         }
     ];
-    
+
     constructor(vnode)
     {
     }
@@ -30,7 +30,7 @@ class LandingScene extends Scene
                         m("h3", "")
                     ]),
                 ]),
-                m("section.row.post-list", PostRepostirory.posts.map(
+                m("section.row.post-list", PostRepository.posts.map(
                     post => m("article.col-12", [
                         m("h5", m("a", {href: post.slug}, post.title)),
                     ])
