@@ -1,8 +1,4 @@
-
-
-
 /* Pages */
-
 
 class PostRepository
 {
@@ -27,7 +23,7 @@ class LandingScene extends Scene
     view(vnode)
     {
         return m("section", [
-            m("article", {class: "mb-3", [
+            m("article", {class: "mb-3"}, [
                 m("section.row", [
                     m("header.col-12", [
                         m("h3", "")
@@ -35,13 +31,15 @@ class LandingScene extends Scene
                 ]),
                 m("section.row.post-list", PostRepostirory.posts.map(
                     post => m("article.col-12", [
-                        m("h5", [
-                            m("a", {href: post.slug}, post.title),
-                        ]),
-                    ]);
-                })),
-            ]}),
-            /*
+                        m("h5", m("a", {href: post.slug}, post.title)),
+                    ])
+                ))
+            ])
+        ]);
+    }
+}
+
+/*
             m("article", {class: "container-fluid"}, [
                 m(".row", [
                     m(".col-6", [
@@ -54,23 +52,19 @@ class LandingScene extends Scene
                     ])
                 ]),
             ]),
-            */
             m("article.container-fluid", [
-                /*
                 m("section.row", [
                     m(".col-12.alert.alert-danger", [
                         m("h2", "Trabalho em Progresso"),
                         m("p", "Esta página está em desenvolvimento. Em breve você poderá comprar pacotes de software/aplicativos."),
                     ]),
                 ]),
-                */
                 m("section.row", [
                     m(ContactForm)
                 ]) 
             ])
-        ]);
-    }
-}
+            */
+
 
 class ContactScene {
     constructor(vnode) {}
