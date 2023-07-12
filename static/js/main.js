@@ -47,7 +47,7 @@ class LandingScene extends Scene
     }
     view(vnode)
     {
-        return m("section", [
+        return m("section.container-fluid", [
             m("article", {class: "mb-3"}, [
                 m("section.row", [
                     m("header.col-12", [
