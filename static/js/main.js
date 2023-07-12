@@ -33,6 +33,7 @@ class ProjectRepository
             title: "CondominioApp",
             description: "Aplicativo Mobile e Desktop voltado para Gestão de Condomínios sendo desenvolvido usando os frameworks MAUI Blazor.",
             url: "https://github.com/felipebastosweb/CondominioApp",
+            src: "",
             tags: ["C#", ".net7", "MAUI", "Blazor", "SQLite"]
         }
     ];
@@ -67,7 +68,7 @@ class LandingScene extends Scene
                     ]),
                 ]),
                 m("section.row.project-list", ProjectRepository.projects.map(
-                    project => m("article.col-4", m(CardView, {title: project.title, subtitle: project.tags.map(tag => m("strong", tag)), url: project.url, text: project.description}))
+                    project => m("article.col-4", m(CardView, {title: project.title, subtitle: project.tags.map(tag => m("strong", tag)), url: project.url, src: project.src, text: project.description}))
                 ).reverse())
             ]),
         ]);
