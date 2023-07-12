@@ -43,7 +43,7 @@ class LandingScene extends Scene
                 ]),
                 m("section.row.post-list", PostRepository.posts.map(
                     post => m("article.col-12", [
-                        m("h5", m("a", {href: post.link, target: "_blank"}, post.title)),
+                        m("h5", m("a", {href: post.url, target: "_blank"}, post.title)),
                     ])
                 ))
             ])
