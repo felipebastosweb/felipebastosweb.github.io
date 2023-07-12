@@ -4,10 +4,21 @@ class PostRepository
 {
     static posts = [
         {
-            title: "",
-            slug: "",
-            content: ""
-        }
+            title: "Flutter e GetX — Parte 1",
+            url: "https://medium.com/@felipebastosweb/flutter-e-getx-parte-1-bddc78a3ba4f",
+        },
+        {
+            title: "Flutter e GetX — Parte 2",
+            url: "https://medium.com/@felipebastosweb/flutter-e-getx-parte-2-d37e619ded30",
+        },
+        {
+            title: "Flutter e Sqlite — Criando várias tabelas",
+            url: "https://medium.com/@felipebastosweb/flutter-e-sqlite-criando-v%C3%A1rias-tabelas-bc5324a83e96",
+        },
+        {
+            title: "Flutter e GetX — Mudança de estado apenas com controller",
+            url: "https://medium.com/@felipebastosweb/flutter-e-getx-mudan%C3%A7a-de-estado-apenas-com-controller-c96ab7697066",
+        },
     ];
 
     constructor(vnode)
@@ -32,7 +43,7 @@ class LandingScene extends Scene
                 ]),
                 m("section.row.post-list", PostRepository.posts.map(
                     post => m("article.col-12", [
-                        m("h5", m("a", {href: post.slug}, post.title)),
+                        m("h5", m("a", {href: post.link, target: "_blank"}, post.title)),
                     ])
                 ))
             ])
