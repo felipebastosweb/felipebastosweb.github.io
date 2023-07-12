@@ -68,7 +68,7 @@ class LandingScene extends Scene
                     ]),
                 ]),
                 m("section.row.project-list", ProjectRepository.projects.map(
-                    project => m("article.col-4", m(CardView, {title: project.title, subtitle: project.tags.map(tag => m(m("strong", tag) + ", ")), url: project.url, src: project.src, text: project.description}))
+                    project => m("article.col-4", m(CardView, {title: project.title, subtitle: project.tags.map(tag => m("strong", tag + ", " )), url: project.url, src: project.src, text: project.description}))
                 ).reverse())
             ]),
         ]);
