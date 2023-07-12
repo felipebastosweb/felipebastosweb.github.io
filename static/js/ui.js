@@ -46,16 +46,16 @@ class UserLoginForm extends Form
     view(vnode)
     {
         return m("form", {id: "login-form", class: "row", mehod: this.method}, [
-            m(".mb-3", [
+            m(".mb-3.form-floating", [
+                m("input", {type: "text", placeHolder: "Username", class: "form-control"}),
                 m("label", {class: "form-label"}, "Username"),
-                m("input", {type: "text", placeHolder: "Username", class: "form-control"})
             ]),
-            m(".mb-3", [
+            m(".mb-3.form-floating", [
+                m("input", {type: "password", placeHolder: "Password", class: "form-control"}),
                 m("label", {class: "form-label"}, "Password"),
-                m("input", {type: "password", placeHolder: "Password", class: "form-control"})
             ]),
             m(".mb-3", [
-                m("label", {class: "btn btn-success"}, "Login"),
+                m("button", {class: "btn btn-success"}, "Login"),
             ]),
         ]);
     }
@@ -71,24 +71,24 @@ class UserRegisterForm
     view(vnode)
     {
         return m("form", {id: "register-form", class: "row"}, [
-            m(".mb-3", [
+            m(".mb-3.form-floating", [
                 m("label", {class: "form-label"}, "Username"),
                 m("input", {type: "text", placeHolder: "Username", class: "form-control"})
             ]),
-            m(".mb-3", [
+            m(".mb-3.form-floating", [
                 m("label", {class: "form-label"}, "Password"),
                 m("input", {type: "password", placeHolder: "Your Password", class: "form-control"})
             ]),
-            m(".mb-3", [
+            m(".mb-3.form-floating", [
                 m("label", {class: "form-label"}, "E-mail"),
                 m("input", {type: "text", placeHolder: "Your E-mail", class: "form-control"})
             ]),
-            m(".mb-3", [
+            m(".mb-3.form-floating", [
                 m("label", {class: "form-label"}, "Telephone"),
                 m("input", {type: "text", placeHolder: "Telephone", class: "form-control"})
             ]),
             m(".mb-3", [
-                m("label", {class: "btn btn-success"}, "Register"),
+                m("button", {class: "btn btn-success"}, "Register"),
             ]),
         ]);
     }

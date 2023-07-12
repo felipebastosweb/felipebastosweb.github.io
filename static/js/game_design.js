@@ -23,6 +23,10 @@ class Level
     constructor(vnode){
         this.actor = vnode.attrs.actor;
     }
+    addScene(index, scene)
+    {
+        this.sceneList[index] = vnode.attrs.scene;
+    }
     moveToScene(index)
     {
         this.sceneActive = index;
@@ -33,6 +37,10 @@ class Scene
 {
     constructor(vnode){
         this.actor = vnode.attrs.actor;
+    }
+    addActor(vnode)
+    {
+        this.actor = vnode.attrs.actor
     }
 }
 
