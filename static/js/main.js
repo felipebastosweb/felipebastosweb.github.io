@@ -38,7 +38,7 @@ class LandingScene extends Scene
             m("article", {class: "mb-3"}, [
                 m("section.row", [
                     m("header.col-12", [
-                        m("h3", "")
+                        m("h3", "Posts recentes")
                     ]),
                 ]),
                 m("section.row.post-list", PostRepository.posts.map(
