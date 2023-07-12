@@ -45,7 +45,7 @@ class LandingScene extends Scene
                     post => m("article.col-12", [
                         m("h5", m("a", {href: post.url, target: "_blank"}, post.title)),
                     ])
-                ))
+                ).reverse())
             ])
         ]);
     }
