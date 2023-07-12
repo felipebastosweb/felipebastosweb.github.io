@@ -26,6 +26,18 @@ class PostRepository
     }
 }
 
+class ProjectRepository
+{
+    static projects = [
+        {
+            title: "CondominioApp",
+            description: "Aplicativo Mobile e Desktop voltado para Gestão de Condomínios sendo desenvolvido usando os frameworks MAUI Blazor.",
+            url: "https://github.com/felipebastosweb/CondominioApp",
+            tags: ["C#", ".net7", "MAUI", "Blazor", "SQLite"]
+        }
+    ];
+}
+
 class LandingScene extends Scene
 {
     constructor(vnode)
@@ -38,7 +50,8 @@ class LandingScene extends Scene
             m("article", {class: "mb-3"}, [
                 m("section.row", [
                     m("header.col-12", [
-                        m("h3", "Posts recentes")
+                        m("h3", "Posts recentes"),
+                        m("p", "Diário de desenvolvimento de Sistemas e Apps")
                     ]),
                 ]),
                 m("section.row.post-list", PostRepository.posts.map(
@@ -46,7 +59,21 @@ class LandingScene extends Scene
                         m("h5", m("a", {href: post.url, target: "_blank"}, post.title)),
                     ])
                 ).reverse())
-            ])
+            ]),
+            m("article", {class: "mb-3"}, [
+                m("section.row", [
+                    m("header.col-12", [
+                        m("h3", "Projetos Open Source")
+                    ]),
+                ]),
+                m("section.row.project-list", ProjectRepository.projects.map(
+                    project => m("article.col-12", [
+                        m("h5", m("a", {href: project.url, target: "_blank"}, project.title)),
+                        m("p", project.description),
+                        m("p.tags", project.tags.map(tag => m("strong", tag)))
+                    ])
+                ).reverse())
+            ]),
         ]);
     }
 }
