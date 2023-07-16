@@ -4,18 +4,22 @@ class PostRepository
 {
     static posts = [
         {
+            imageUrl: "https://raw.githubusercontent.com/jonataslaw/getx-community/master/getx.png",
             title: "Flutter e GetX — Parte 1",
             url: "https://medium.com/@felipebastosweb/flutter-e-getx-parte-1-bddc78a3ba4f",
         },
         {
+            imageUrl: "https://raw.githubusercontent.com/jonataslaw/getx-community/master/getx.png",
             title: "Flutter e GetX — Parte 2",
             url: "https://medium.com/@felipebastosweb/flutter-e-getx-parte-2-d37e619ded30",
         },
         {
+            imageUrl: "",
             title: "Flutter e Sqlite — Criando várias tabelas",
             url: "https://medium.com/@felipebastosweb/flutter-e-sqlite-criando-v%C3%A1rias-tabelas-bc5324a83e96",
         },
         {
+            imageUrl: "",
             title: "Flutter e GetX — Mudança de estado apenas com controller",
             url: "https://medium.com/@felipebastosweb/flutter-e-getx-mudan%C3%A7a-de-estado-apenas-com-controller-c96ab7697066",
         },
@@ -56,8 +60,14 @@ class LandingScene extends Scene
                     ]),
                 ]),
                 m("section.row.post-list", PostRepository.posts.map(
-                    post => m("article.col-12", [
-                        m("h5", m("a", {href: post.url, target: "_blank"}, post.title)),
+                    post => m("article.col-3", [
+                        m(CardView, {
+                            title: m("a", {href: post.url, target: "_blank"}, post.title),
+                            subtitle: "",
+                            url: post.url,
+                            src: post.ImageUrl,
+                            text: "",
+                        }),
                     ])
                 ).reverse())
             ]),
@@ -69,7 +79,13 @@ class LandingScene extends Scene
                 ]),
                 m("section.row.project-list", ProjectRepository.projects.map(
                     project => m("article.col-4", [
-                        m(CardView, {title: project.title, subtitle: project.tags.map(tag => m("strong", tag + ", ")), url: project.url, src: project.src, text: project.description})
+                        m(CardView, {
+                            title: project.title,
+                            subtitle: project.tags.map(tag => m("strong", tag + ", ")),
+                            url: project.url,
+                            src: project.src,
+                            text: project.description
+                        })
                     ])
                 ).reverse())
             ]),
