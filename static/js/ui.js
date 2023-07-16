@@ -14,7 +14,7 @@ class CardView
                 height: vnode.attrs.height != "" ? vnode.attrs.height : "400px"
             }),
             m(".card-body", [
-                m("h5.card-title", m("a", {href: vnode.attrs.url, target: "_blank"}, vnode.attrs.title)),
+                m("h5.card-title", vnode.attrs.title)),
                 m("h6.card-subtitle.mb-2.text-body-secondary", vnode.attrs.subtitle),
                 m("p.card-text", vnode.attrs.text)
             ])
