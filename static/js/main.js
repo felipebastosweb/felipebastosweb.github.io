@@ -63,6 +63,7 @@ class LandingScene extends Scene
                     post => m("article.col-3", [
                         m(CardView, {
                             title: post.title,
+                            target: "_blank",
                             subtitle: "",
                             url: post.url,
                             src: post.imageUrl,
@@ -81,6 +82,7 @@ class LandingScene extends Scene
                     project => m("article.col-4", [
                         m(CardView, {
                             title: project.title,
+                            target: "_blank",
                             subtitle: project.tags.map(tag => m("strong", tag + ", ")),
                             url: project.url,
                             src: project.src,
