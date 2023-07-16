@@ -14,12 +14,12 @@ class PostRepository
             url: "https://medium.com/@felipebastosweb/flutter-e-getx-parte-2-d37e619ded30",
         },
         {
-            imageUrl: "",
+            imageUrl: "https://user-images.githubusercontent.com/32497443/48977150-cfe2ab00-f062-11e8-9e84-483ca902df98.png",
             title: "Flutter e Sqlite — Criando várias tabelas",
             url: "https://medium.com/@felipebastosweb/flutter-e-sqlite-criando-v%C3%A1rias-tabelas-bc5324a83e96",
         },
         {
-            imageUrl: "",
+            imageUrl: "https://raw.githubusercontent.com/jonataslaw/getx-community/master/getx.png",
             title: "Flutter e GetX — Mudança de estado apenas com controller",
             url: "https://medium.com/@felipebastosweb/flutter-e-getx-mudan%C3%A7a-de-estado-apenas-com-controller-c96ab7697066",
         },
