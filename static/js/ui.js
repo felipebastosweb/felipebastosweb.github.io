@@ -11,7 +11,7 @@ class CardView
                 class: "card-img-top",
                 src: vnode.attrs.src,
                 width: "100%",
-                height: "200px"
+                height: vnode.attrs.height != "" ? vnode.attrs.height : "400px"
             }),
             m(".card-body", [
                 m("h5.card-title", m("a", {href: vnode.attrs.url, target: "_blank"}, vnode.attrs.title)),
