@@ -7,7 +7,7 @@ class CardView
     view(vnode)
     {
         return m("div.card", [
-            m("img.card-img-top", {src: vnode.attrs.src}),
+            m("img", {class: "card-img-top", src: vnode.attrs.src}),
             m(".card-body", [
                 m("h5.card-title", m("a", {href: vnode.attrs.url, target: "_blank"}, vnode.attrs.title)),
                 m("h6.card-subtitle.mb-2.text-body-secondary", vnode.attrs.subtitle),
