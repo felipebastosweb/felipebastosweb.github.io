@@ -65,7 +65,7 @@ class LandingScene extends Scene
                             title: m("a", {href: post.url, target: "_blank"}, post.title),
                             subtitle: "",
                             url: post.url,
-                            src: post.ImageUrl,
+                            src: post.imageUrl,
                             text: "",
                         }),
                     ])
