@@ -62,7 +62,7 @@ class LandingScene extends Scene
                 m("section.row.post-list", PostRepository.posts.map(
                     post => m("article.col-3", [
                         m(CardView, {
-                            title: post.title),
+                            title: post.title,
                             subtitle: "",
                             url: post.url,
                             src: post.imageUrl,
