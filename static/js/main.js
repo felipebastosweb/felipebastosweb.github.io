@@ -38,7 +38,14 @@ class ProjectRepository
             description: "Aplicativo Mobile e Desktop voltado para Gestão de Condomínios sendo desenvolvido usando os frameworks MAUI Blazor.",
             url: "https://github.com/felipebastosweb/CondominioApp",
             src: "",
-            tags: ["C#", ".net7", "MAUI", "Blazor", "SQLite"]
+            tags: ["C#", ".Net7", "MAUI", "Blazor", "SQLite"]
+        },
+        {
+            title: "LMS Lite",
+            description: "Aplicativo básico para Plataforma de Gerenciamento de Aprendizado para a Cada da Aprendizagem",
+            url: "https://github.com/felipebastosweb/LMS",
+            src: "",
+            tags: ["C#", ".Net7", "MAUI", "Blazor", "SQLite"]
         }
     ];
 }
@@ -52,6 +59,25 @@ class LandingScene extends Scene
     view(vnode)
     {
         return m("section.container-fluid", [
+            m("article", {class: "mb-3"}, [
+                m("section.row", [
+                    m("header.col-12", [
+                        m("h3", "Projetos Open Source")
+                    ]),
+                ]),
+                m("section.row.project-list", ProjectRepository.projects.map(
+                    project => m("article.col-4", [
+                        m(CardView, {
+                            title: project.title,
+                            target: "_blank",
+                            subtitle: project.tags.map(tag => m("strong", tag + ", ")),
+                            url: project.url,
+                            src: project.src,
+                            text: project.description
+                        })
+                    ])
+                ).reverse())
+            ]),
             m("article", {class: "mb-3"}, [
                 m("section.row", [
                     m("header.col-12", [
@@ -69,25 +95,6 @@ class LandingScene extends Scene
                             src: post.imageUrl,
                             text: "",
                         }),
-                    ])
-                ).reverse())
-            ]),
-            m("article", {class: "mb-3"}, [
-                m("section.row", [
-                    m("header.col-12", [
-                        m("h3", "Projetos Open Source")
-                    ]),
-                ]),
-                m("section.row.project-list", ProjectRepository.projects.map(
-                    project => m("article.col-4", [
-                        m(CardView, {
-                            title: project.title,
-                            target: "_blank",
-                            subtitle: project.tags.map(tag => m("strong", tag + ", ")),
-                            url: project.url,
-                            src: project.src,
-                            text: project.description
-                        })
                     ])
                 ).reverse())
             ]),
