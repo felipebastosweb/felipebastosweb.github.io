@@ -124,7 +124,7 @@ class LandingNavHeader
                 //m("a.nav-link", {href: "#!/projects"}, "Projetos"),
                 //m("a.nav-link", {href: "#!/partnership"}, "Parcerias"),
                 //m("a.nav-link", {href: "#!/p/about"}, "Sobre"),
-                //m("a.nav-link", {href: "#!/p/contact"}, "Contato"),
+                m("a.nav-link", {href: "https://web.whatsapp.com/send?phone=5571997364959", target: "_blank"}, "WhatsApp"),
                 /*
                 m("a.nav-link", {href: "#!/cart"}, [
                     m("i.bi.bi-cart"),
