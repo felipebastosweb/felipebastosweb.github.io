@@ -126,8 +126,13 @@ class LandingNavHeader
                 //m("a.nav-link", {href: "#!/p/about"}, "Sobre"),
                 m("a.nav-link", {href: "https://web.whatsapp.com/send?phone=5571997364959&text=Vi%20no%20seu%20site%20que%20você%20cria%20apps%2E%20Gostaria%20de%2E%2E", target: "_blank"}, [
                     m("i.bi.bi-whatsapp"),
-                    "WhatsApp"
+                    " WhatsApp"
                 ]),
+                m("a.nav-link", {href: "https://www.facebook.com/profile.php?id=100088454193001&text=Vi%20no%20seu%20site%20que%20você%20cria%20apps%2E%20Gostaria%20de%2E%2E", target: "_blank"}, [
+                    m("i.bi.bi-facebook"),
+                    " Facebook"
+                ]),
+                
                 /*
                 m("a.nav-link", {href: "#!/cart"}, [
                     m("i.bi.bi-cart"),
