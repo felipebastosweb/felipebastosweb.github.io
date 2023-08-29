@@ -5,6 +5,7 @@ class LmsRepository
     static courses = [];
     static resources = [
         {
+            type: "PDF",
             title: "Ebook MAUI Blazor com C#.Net",
             description: "Ebook sobre criação de Aplicativo Mobile e Desktop.",
             //  voltado para Gestão de Condomínios sendo desenvolvido usando os frameworks MAUI Blazor
@@ -68,6 +69,25 @@ class LandingScene extends Scene
     view(vnode)
     {
         return m("section.container-fluid", [
+            m("article", {class: "mb-3"}, [
+                m("section.row", [
+                    m("header.col-12", [
+                        m("h3", "Cursos e Recursos")
+                    ]),
+                ]),
+                m("section.row.lms-list", LmsRepository.resources.map(
+                    resource => m("article.col-4", [
+                        m(CardView, {
+                            title: resource.title,
+                            target: "_blank",
+                            subtitle: resource.tags.map(tag => m("strong", tag + ", ")),
+                            url: resource.url,
+                            src: resource.src,
+                            text: resource.description
+                        })
+                    ])
+                ).reverse())
+            ]),
             m("article", {class: "mb-3"}, [
                 m("section.row", [
                     m("header.col-12", [
