@@ -34,13 +34,6 @@ class ProjectRepository
 {
     static projects = [
         {
-            title: "CondominioApp",
-            description: "Aplicativo Mobile e Desktop voltado para Gestão de Condomínios sendo desenvolvido usando os frameworks MAUI Blazor.",
-            url: "https://github.com/felipebastosweb/CondominioApp",
-            src: "",
-            tags: ["C#", ".Net7", "MAUI", "Blazor", "SQLite"]
-        },
-        {
             title: "LMS Lite",
             description: "Aplicativo básico para Plataforma de Gerenciamento de Aprendizado para a Cada da Aprendizagem",
             url: "https://github.com/felipebastosweb/LMS",
