@@ -20,3 +20,8 @@ export class Observable {
         this.observers.forEach(observer => observer(data));
     }
 }
+
+
+export class EventHandler extends Observable {
+
+}

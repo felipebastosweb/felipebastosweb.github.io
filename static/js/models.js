@@ -30,6 +30,18 @@ export class User extends Model {
     }
 }
 
+
+export class Contact extends Model {
+    constructor(self) {
+        super(self)
+        this.email = self.email
+        this.telephone = self.telephone
+        this.fax = self.fax
+        this.site = self.site
+    }
+}
+
+
 class Store extends Model {
     constructor(self) {
         this.name = self.name
@@ -55,6 +67,26 @@ class Supplier extends Model {
     }
 }
 
+export class Product extends Model {
+    constructor(self) {
+        super(self)
+        this.title = self.title
+        this.description = self.description
+        this.price = self.price
+    }
+    
+}
+
+export class ProductStore extends Model {
+    constructor(self) {
+        super(self)
+        this.Product = self.product
+        this.Store = self.store
+        this.price = self.price
+    }
+    
+}
+
 class Purchase extends Model {
     constructor(self) {
         super(self)
@@ -71,18 +103,54 @@ class PurchaseItem extends Model {
         this.TotalPrice = self.TotalPrice
     }
 }
-
-export class Product extends Model {
+export class Stock extends Model {
     constructor(self) {
         super(self)
-        this.title = self.title
-        this.description = self.description
-        this.price = self.price
     }
-    
+}
+
+export class IncomingStock extends Model {
+    constructor(self) {
+        super(self)
+        this.Purchase = self.Purchase
+    }
+}
+
+export class OutgoingStock extends Model {
+    constructor(self) {
+        super(self)
+        this.OrderProduct = self.OrderProduct
+    }
+}
+
+export class Order extends Model  {
+    constructor(self) {
+        super(self)
+        this.Customer = self.Customer
+    }
+}
+
+export class OrderItem extends Model  {
+    constructor(self) {
+        super(self)
+        this.Order = self.Order
+        this.Product = self.Product
+    }
 }
 
 
+export class OrderService extends Model  {
+    constructor(self) {
+        super(self)
+        this.customer = self.customer
+    }
+}
+
+export class ServiceItem extends Model {
+    constructor(self) {
+        super(self)
+    }
+}
 
 export class Project extends Model {
     constructor(self) {
