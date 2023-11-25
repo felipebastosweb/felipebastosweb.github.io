@@ -1,5 +1,5 @@
 
-export class Model {
+class Model {
     constructor(self) {
         this.id = (self.id != null)
             ? self.id : null
@@ -10,7 +10,7 @@ export class Model {
     }
 }
 
-export class User extends Model {
+class User extends Model {
     constructor(self) {
         super(self)
         this.username = self.username
@@ -24,14 +24,14 @@ export class User extends Model {
     }
     login_change_last_access() {
         this.last_access_date = Date.now()
-    }
+   }
     logout_change_last_access() {
         this.last_access_date = Date.now()
     }
 }
 
 
-export class Contact extends Model {
+class Contact extends Model {
     constructor(self) {
         super(self)
         this.email = self.email
@@ -67,7 +67,7 @@ class Supplier extends Model {
     }
 }
 
-export class Product extends Model {
+class Product extends Model {
     constructor(self) {
         super(self)
         this.title = self.title
@@ -77,7 +77,7 @@ export class Product extends Model {
     
 }
 
-export class ProductStore extends Model {
+class ProductStore extends Model {
     constructor(self) {
         super(self)
         this.Product = self.product
@@ -103,34 +103,34 @@ class PurchaseItem extends Model {
         this.TotalPrice = self.TotalPrice
     }
 }
-export class Stock extends Model {
+class Stock extends Model {
     constructor(self) {
         super(self)
     }
 }
 
-export class IncomingStock extends Model {
+class IncomingStock extends Model {
     constructor(self) {
         super(self)
         this.Purchase = self.Purchase
     }
 }
 
-export class OutgoingStock extends Model {
+class OutgoingStock extends Model {
     constructor(self) {
         super(self)
         this.OrderProduct = self.OrderProduct
     }
 }
 
-export class Order extends Model  {
+class Order extends Model  {
     constructor(self) {
         super(self)
         this.Customer = self.Customer
     }
 }
 
-export class OrderItem extends Model  {
+class OrderItem extends Model  {
     constructor(self) {
         super(self)
         this.Order = self.Order
@@ -139,20 +139,20 @@ export class OrderItem extends Model  {
 }
 
 
-export class OrderService extends Model  {
+class OrderService extends Model  {
     constructor(self) {
         super(self)
         this.customer = self.customer
     }
 }
 
-export class ServiceItem extends Model {
+class ServiceItem extends Model {
     constructor(self) {
         super(self)
     }
 }
 
-export class Project extends Model {
+class Project extends Model {
     constructor(self) {
         super(self)
         this.Owner = self.Owner
@@ -164,7 +164,7 @@ export class Project extends Model {
     }
 }
 
-export class ProjectTask extends Model {
+class ProjectTask extends Model {
     constructor(self) {
         super(self)
         this.Project = self.Project

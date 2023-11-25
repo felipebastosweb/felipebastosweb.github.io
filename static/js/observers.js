@@ -3,7 +3,7 @@
  * **/
 
 
-export class Observable {
+class Observable {
     constructor() {
         this.observers = [];
     }
@@ -22,6 +22,6 @@ export class Observable {
 }
 
 
-export class EventHandler extends Observable {
+class EventHandler extends Observable {
 
 }

@@ -22,16 +22,6 @@ class CardView
     }
 }
 
-
-class Page
-{
-    constructor(vnode)
-    {
-        //
-    }
-}
-
-
 /***
  * oninit, oncreate, onupdate
  * https://mithril.js.org/lifecycle-methods.html

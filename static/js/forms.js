@@ -233,7 +233,7 @@ class FormButtonGroup {
     }
 }
 
-export class ContactForm {
+class ContactForm {
     constructor(vnode) {}
     onSubmit(vnode) {
         if (vnode.attrs.email) {
