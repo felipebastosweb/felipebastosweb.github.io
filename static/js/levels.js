@@ -1,15 +1,13 @@
 
 class Level
 {
+    actor;
     sceneActive;
     sceneList = {};
 
-    constructor(vnode){
-        this.actor = vnode.attrs.actor;
-    }
     addScene(index, scene)
     {
-        this.sceneList[index] = vnode.attrs.scene;
+        this.sceneList[vnode.attrs.index] = vnode.attrs.scene;
     }
     moveToScene(index)
     {
@@ -22,8 +20,9 @@ class LandingLevel extends Level
 {
     contructor(vnode)
     {
+        this.actor = vnode.attrs.actor;
         //super({actor: vnode.attrs.actor});
-        this.scenes = {
+        this.sceneList = {
             start: LandingScene
         };
         this.sceneActive = this.scenes.start;
