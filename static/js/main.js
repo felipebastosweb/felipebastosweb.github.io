@@ -10,7 +10,10 @@ class Game
     }
     run(vnode)
     {
-        this.loadContent();
+        this.levelList = {
+            "/": LandingLevel,
+            "/home": HomeLevel,
+        }
         return m.route(document.body, "/", this.levelList)
     }
 }
@@ -23,14 +26,6 @@ class Game
 // Game Design https://agilebygamedesign.github.io/
 class Application extends Game// Game
 {
-    
-    loadContent()
-    {
-        this.levelList = {
-            "/": LandingLevel,
-            "/home": HomeLevel,
-        }
-    }
 }
 
 app = new Application()
