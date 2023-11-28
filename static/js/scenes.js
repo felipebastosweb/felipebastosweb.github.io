@@ -1,17 +1,6 @@
+import { Scene } from "./gdd.js";
 
-class Scene
-{
-    constructor(vnode){
-        this.actor = vnode.attrs.actor;
-    }
-    addActor(vnode)
-    {
-        this.actor = vnode.attrs.actor
-    }
-}
-
-
-class LandingScene extends Scene
+export class LandingScene extends Scene
 {
     constructor(vnode)
     {
@@ -82,37 +71,11 @@ class LandingScene extends Scene
     }
 }
 
-/*
-            m("article", {class: "container-fluid"}, [
-                m(".row", [
-                    m(".col-6", [
-                        m("h3", "Cadastrar"),
-                        m(UserRegisterForm)
-                    ]),
-                    m(".col-6", [
-                        m("h3", "Entrar"),
-                        m(UserLoginForm)
-                    ])
-                ]),
-            ]),
-            m("article.container-fluid", [
-                m("section.row", [
-                    m(".col-12.alert.alert-danger", [
-                        m("h2", "Trabalho em Progresso"),
-                        m("p", "Esta página está em desenvolvimento. Em breve você poderá comprar pacotes de software/aplicativos."),
-                    ]),
-                ]),
-                m("section.row", [
-                    m(ContactForm)
-                ]) 
-            ])
-            */
 
-
-class ContactScene {
+export class ContactScene {
     constructor(vnode) {}
     view(vnode) {
-        return 
+        return m("p", "&nbsp;");
     }
 }
 

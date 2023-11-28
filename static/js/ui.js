@@ -2,7 +2,25 @@
 
 /* General Components */
 
-class CardView
+export class Image {
+    view(self) {
+        return m("img", {
+            src: self.attrs.src,
+            title: self.attrs.title,
+            alt: self.attrs.alt
+        });
+    }
+}
+
+export class Video {
+    view(self) {
+        return m("video", {controls: self.attrs.controls}, [
+            m("source[type='video/mp4'][src]"),
+        ]);
+    }
+}
+
+export class CardView
 {
     view(vnode)
     {
@@ -35,7 +53,7 @@ class CardView
 
 /* Level Components */
 
-class LandingNavHeader
+export class LandingNavHeader
 {
     constructor(vnode) {
         this.actor = vnode.attrs.actor;
@@ -68,7 +86,7 @@ class LandingNavHeader
     }
 }
 
-class LandingHeroHeader
+export class LandingHeroHeader
 {
     constructor(vnode){}
     view(vnode)
@@ -95,7 +113,7 @@ class LandingHeroHeader
     }
 }
 
-class JumbotronHeader
+export class JumbotronHeader
 {
     constructor(vnode) {}
     view(vnode) {
@@ -109,7 +127,7 @@ class JumbotronHeader
     }
 }
 
-class LandingHeader
+export class LandingHeader
 {
     view(vnode)
     {
@@ -120,7 +138,7 @@ class LandingHeader
     }
 }
 
-class NavFooter {
+export class NavFooter {
     constructor(vnode) {}
     view(vnode) {
         return m(".row", [
@@ -163,7 +181,7 @@ class NavFooter {
     }
 }
 
-class BottomFooter {
+export class BottomFooter {
     constructor(vnode) {}
     view(vnode) {
         return m(".row", {style: "padding-top: 20px; padding-bottom: 20px"}, [
@@ -180,6 +198,17 @@ class BottomFooter {
             m(".col-12", [
                 m("address", "Rua Vista do Mar, 64 - apto 004, Pirajá, Salvador-BA, Brasil."),
             ]),
+        ]);
+    }
+}
+
+
+export class LandingFooter {
+    constructor(vnode){}
+    view(vnode)     {
+        return m("footer", {class: "container-fluid"}, [
+            m(NavFooter),
+            m(BottomFooter)
         ]);
     }
 }

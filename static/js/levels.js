@@ -1,22 +1,8 @@
+import { Level } from "./gdd.js";
+// internal components
+import { LandingHeader, LandingFooter } from "./ui";
 
-class Level
-{
-    actor;
-    sceneActive;
-    sceneList = {};
-
-    addScene(index, scene)
-    {
-        this.sceneList[vnode.attrs.index] = vnode.attrs.scene;
-    }
-    moveToScene(index)
-    {
-        this.sceneActive = index;
-    }
-}
-
-
-class LandingLevel extends Level
+export class LandingLevel extends Level
 {
     contructor(vnode)
     {
@@ -39,16 +25,13 @@ class LandingLevel extends Level
             m(LandingHeader),
             m(LandingScene, vnode),
             //m(this.sceneActive, vnode),
-            m("footer", {class: "container-fluid"}, [
-                m(NavFooter),
-                m(BottomFooter)
-            ]),
+            m(LandingFooter)
         ]);
     }
 }
 
 
-class HomeLevel extends Level
+export class HomeLevel extends Level
 {
     contructor(vnode)
     {
@@ -58,9 +41,12 @@ class HomeLevel extends Level
     view(vnode)
     {
         return m("page", [
-            m("header", {class: "container-fluid"}, []),
+            m(LandingHeader),
             m("article", {class: "container-fluid"}, []),
-            m("footer", {class: "container-fluid"}, []),
+            m("footer", {class: "container-fluid"}, [
+                m(NavFooter),
+                m(BottomFooter)
+            ]),
         ]);
     }
 }
