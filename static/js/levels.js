@@ -5,10 +5,15 @@ import { LandingHeader, LandingFooter } from "./ui.js";
 
 export class Level
 {
-    actor;
     sceneActive;
     sceneList = {};
-
+    constructor(self) {
+        this.actor = self.attrs.actor;
+        this.sceneList = self.attrs.sceneList;
+    }
+    addActor(index, actor) {
+        this.actor[index] = actor;
+    }
     addScene(index, scene)
     {
         this.sceneList[vnode.attrs.index] = vnode.attrs.scene;

@@ -9,7 +9,7 @@ export class LmsRepository
             title: "Ebook MAUI Blazor com C#.Net",
             description: "Ebook sobre criação de Aplicativo Mobile e Desktop.",
             //  voltado para Gestão de Condomínios sendo desenvolvido usando os frameworks MAUI Blazor
-            url: "https://github.com/felipebastosweb/Ebook-MAUI-Blazor-CSharp-Net",
+            url: "https://github.com/felipebastosweb/Ebook-MAUI-Blazor-CSharp-Net/blob/main/index.md",
             src: "",
             tags: ["C#", ".Net7", "MAUI", "Blazor", "SQLite"]
         },
