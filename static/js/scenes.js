@@ -1,4 +1,5 @@
 import { LmsRepository, ProjectRepository, PostRepository } from "./repositories.js"
+import { CardView } from "./ui.js"
 
 export class Scene
 {
