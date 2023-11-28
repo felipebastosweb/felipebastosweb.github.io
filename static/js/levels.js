@@ -1,6 +1,6 @@
 import { Level } from "./gdd.js";
 // internal components
-import { LandingHeader, LandingFooter } from "./ui";
+import { LandingHeader, LandingFooter } from "./ui.js";
 
 export class LandingLevel extends Level
 {

@@ -94,11 +94,10 @@ export class LandingHeroHeader
         return m("article", {class: "px-4 py-5 my-5 text-center"}, [
             //<img class="d-block mx-auto mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
             m("h1", {class: "display-5 fw-bold text-body-emphasis"}, [
-                m("span", {style: "background-color: #338FFF"}, "FelipeBastos"),
-                m("span", "Web")
+                m("span", "FelipeBastosWeb")
             ]),
             m("div", {class: "col-lg-6 mx-auto"}, [
-                m("p", {class: "lead mb-4"}, "Programador e Analista de Sistemas")
+                m("p", {class: "lead mb-4"}, "Programador, Analista, e Projetista de Aplicativos")
             ])
             /*
             <div class="col-lg-6 mx-auto">
@@ -113,7 +112,7 @@ export class LandingHeroHeader
     }
 }
 
-export class JumbotronHeader
+export class Jumbotron
 {
     constructor(vnode) {}
     view(vnode) {
