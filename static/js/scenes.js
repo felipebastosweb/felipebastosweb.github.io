@@ -1,4 +1,14 @@
-import { Scene } from "./gdd.js";
+
+export class Scene
+{
+    constructor(vnode){
+        this.actor = vnode.attrs.actor;
+    }
+    addActor(vnode)
+    {
+        this.actor = vnode.attrs.actor
+    }
+}
 
 export class LandingScene extends Scene
 {

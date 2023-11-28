@@ -1,7 +1,24 @@
-import { Level } from "./gdd.js";
 import { LandingScene } from "./scenes.js";
 // internal components
 import { LandingHeader, LandingFooter } from "./ui.js";
+
+
+export class Level
+{
+    actor;
+    sceneActive;
+    sceneList = {};
+
+    addScene(index, scene)
+    {
+        this.sceneList[vnode.attrs.index] = vnode.attrs.scene;
+    }
+    moveToScene(index)
+    {
+        this.sceneActive = index;
+    }
+}
+
 
 export class LandingLevel extends Level
 {
