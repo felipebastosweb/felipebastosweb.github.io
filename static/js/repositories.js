@@ -51,6 +51,13 @@ export class ProjectRepository
 {
     static projects = [
         {
+            title: "Agile by Game Design",
+            description: "Metodologia Ágil de Desevolvimento de Sistemas baseado em Design de Jogos",
+            url: "https://agilebygamedesign.github.io/",
+            src: "",
+            tags: ["JavaScript", "ECMAScript", "Agile"]
+        },
+        {
             title: "LMS Lite",
             description: "Aplicativo básico para Plataforma de Gerenciamento de Aprendizado para a Cada da Aprendizagem",
             url: "https://github.com/felipebastosweb/LMS",
