@@ -3,6 +3,7 @@
 /* General Components */
 
 export class Image {
+    constructor(vnode){}
     view(self) {
         return m("img", {
             src: self.attrs.src,
@@ -13,15 +14,17 @@ export class Image {
 }
 
 export class Video {
+    constructor(vnode){}
     view(self) {
         return m("video", {controls: self.attrs.controls}, [
-            m("source[type='video/mp4'][src]"),
+            m("source", {type: self.attrs.type, src: self.attrs.src}),
         ]);
     }
 }
 
 export class CardView
 {
+    constructor(vnode){}
     view(vnode)
     {
         return m("div.card", [
@@ -39,11 +42,6 @@ export class CardView
         ]);
     }
 }
-
-/***
- * oninit, oncreate, onupdate
- * https://mithril.js.org/lifecycle-methods.html
- * **/
 
 /* LandingScene Components */
 
@@ -99,15 +97,6 @@ export class LandingHeroHeader
             m("div", {class: "col-lg-6 mx-auto"}, [
                 m("p", {class: "lead mb-4"}, "Programador, Analista, e Projetista de Aplicativos")
             ])
-            /*
-            <div class="col-lg-6 mx-auto">
-      <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
-      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Primary button</button>
-        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>
-      </div>
-    </div>
-            */
         ])
     }
 }

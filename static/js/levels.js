@@ -1,4 +1,5 @@
 import { Level } from "./gdd.js";
+import { LandingScene } from "./scenes.js";
 // internal components
 import { LandingHeader, LandingFooter } from "./ui.js";
 
@@ -43,10 +44,7 @@ export class HomeLevel extends Level
         return m("page", [
             m(LandingHeader),
             m("article", {class: "container-fluid"}, []),
-            m("footer", {class: "container-fluid"}, [
-                m(NavFooter),
-                m(BottomFooter)
-            ]),
+            m(LandingFooter),
         ]);
     }
 }
