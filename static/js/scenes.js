@@ -1,3 +1,4 @@
+import { LmsRepository, ProjectRepository, PostRepository } from "./repositories.js"
 
 export class Scene
 {

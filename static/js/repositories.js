@@ -1,6 +1,6 @@
 /* Pages */
 
-class LmsRepository
+export class LmsRepository
 {
     static courses = [];
     static resources = [
@@ -17,7 +17,7 @@ class LmsRepository
 }
     
 
-class PostRepository
+export class PostRepository
 {
     static posts = [
         {
@@ -47,7 +47,7 @@ class PostRepository
     }
 }
 
-class ProjectRepository
+export class ProjectRepository
 {
     static projects = [
         {
