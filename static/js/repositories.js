@@ -40,6 +40,11 @@ export class PostRepository
             title: "Flutter e GetX — Mudança de estado apenas com controller",
             url: "https://medium.com/@felipebastosweb/flutter-e-getx-mudan%C3%A7a-de-estado-apenas-com-controller-c96ab7697066",
         },
+        {
+            imageUrl: "",
+            title: "Javascript para Devs backend — parte 1",
+            url: "https://medium.com/@felipebastosweb/javascript-para-devs-backend-parte-1-12e2b82a37ad"
+        }
     ];
 
     constructor(vnode)
