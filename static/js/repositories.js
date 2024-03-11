@@ -57,9 +57,9 @@ export class ProjectRepository
     static projects = [
         {
             title: "StoreApp Local Server",
-            url: "https://github.com/felipebastosweb/storeapp_dlang/blob/main/README.md",
+            url: "https://github.com/felipebastosweb/storeapp_dlang",
             description: "Aplicativo Gestor de Loja Físicas",
-            src: "https://github.com/felipebastosweb/storeapp_dlang",
+            src: "https://github.com/felipebastosweb/storeapp_dlang/blob/main/screenshots/home.png",
             tags: ["D", "Vibe.d", "Html5", "Javascript", "Bootstrap"]
         },
         {
