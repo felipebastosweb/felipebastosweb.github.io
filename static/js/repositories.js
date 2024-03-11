@@ -56,6 +56,13 @@ export class ProjectRepository
 {
     static projects = [
         {
+            title: "StoreApp Local Server",
+            url: "https://github.com/felipebastosweb/storeapp_dlang/blob/main/README.md",
+            description: "Aplicativo Gestor de Loja Físicas",
+            src: "https://github.com/felipebastosweb/storeapp_dlang",
+            tags: ["D", "Vibe.d", "Html5", "Javascript", "Bootstrap"]
+        },
+        {
             title: "Agile by Game Design",
             description: "Metodologia Ágil de Desevolvimento de Sistemas baseado em Design de Jogos",
             url: "https://agilebygamedesign.github.io/",

@@ -21,6 +21,7 @@ export class LandingScene extends Scene
     view(vnode)
     {
         return m("section.container-fluid", [
+            /*
             m("article", {class: "mb-3"}, [
                 m("section.row", [
                     m("header.col-12", [
@@ -40,6 +41,7 @@ export class LandingScene extends Scene
                     ])
                 ).reverse())
             ]),
+            */
             m("article", {class: "mb-3"}, [
                 m("section.row", [
                     m("header.col-12", [
@@ -59,6 +61,7 @@ export class LandingScene extends Scene
                     ])
                 ).reverse())
             ]),
+            /*
             m("article", {class: "mb-3"}, [
                 m("section.row", [
                     m("header.col-12", [
@@ -79,6 +82,7 @@ export class LandingScene extends Scene
                     ])
                 ).reverse())
             ]),
+            */
         ]);
     }
 }
