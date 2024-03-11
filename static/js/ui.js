@@ -180,7 +180,7 @@ export class BottomFooter {
                 m("p", [
                     "Desenvolvido por ",
                     m("a", {href:"https://felipebastosweb.github.io", target: "_blank" }, "FelipeBastosWeb" ),
-                    " (atualizado em 25/05/2023)"
+                    " (atualizado em 11/03/2024)"
                 ])
             ]),
             m(".col-12", [
