@@ -59,7 +59,7 @@ export class ProjectRepository
             title: "StoreApp Local Server",
             url: "https://github.com/felipebastosweb/storeapp_dlang",
             description: "Aplicativo Gestor de Loja Físicas",
-            src: "https://github.com/felipebastosweb/storeapp_dlang/blob/main/screenshots/home.png",
+            src: "https://raw.githubusercontent.com/felipebastosweb/storeapp_dlang/main/screenshots/home.png",
             tags: ["D", "Vibe.d", "Html5", "Javascript", "Bootstrap"]
         },
         {
