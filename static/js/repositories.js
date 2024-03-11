@@ -66,7 +66,7 @@ export class ProjectRepository
             title: "Agile by Game Design",
             description: "Metodologia Ágil de Desevolvimento de Sistemas baseado em Design de Jogos",
             url: "https://agilebygamedesign.github.io/",
-            src: "",
+            src: "https://raw.githubusercontent.com/agilebygamedesign/agilebygamedesign.github.io/main/screenshots/home.png",
             tags: ["JavaScript", "ECMAScript", "Agile"]
         },
         {
