@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="author" content="@felipebastosweb">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  </head>
+  <body>
+    <div class="page">
+      <!--Header-->
+      <header class="container-fluid">
+        <section class="row">
+          <nav class="nav">
+            <a href="#!/" class="nav-link">Início</a>
+            <a href="#!/projects" class="nav-link"></a>
+            <a href="https://web.whatsapp.com/send?phone=5571997364959&amp;text=Vi%20no%20seu%20site%20que%20você%20cria%20apps%2E%20Gostaria%20de%2E%2E" target="_blank" class="nav-link"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+            <a href="https://www.facebook.com/profile.php?id=100088454193001&amp;text=Vi%20no%20seu%20site%20que%20você%20cria%20apps%2E%20Gostaria%20de%2E%2E" target="_blank" class="nav-link"><i class="bi bi-facebook"></i> Facebook</a>
+          </nav>
+        </section>
+        <article class="px-4 py-5 my-5 text-center">
+          <h1 class="display-5 fw-bold text-body-emphasis"><span>FelipeBastosWeb</span></h1>
+          <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">Programador, Analista, e Projetista de Aplicativos</p>
+          </div>
+        </article>
+      </header>
+      
+      <!--Content-->
+      <article class="page-content">
+          {{ content }}
+      </article>
+      
+      <!-- Footer-->
+      <footer class="container">
+        <section class="row"></section>
+      </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
