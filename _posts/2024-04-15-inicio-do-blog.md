@@ -17,9 +17,9 @@ categories:
 
 Estou iniciando esse Blog para postar atualizações dos meus projetos de código aberto (open source) que ficarão hospedados nesse perfil e nos perfis das organizações do github que gerencio. A partir desse momento irei tornar alguns projetos públicos, e você poderá usar com a licença MIT, e poderá também me contratar como programador/analista freelancer para desenvolver funcionalidades específicas (ou compartilhadas) para o seu negócio. Inicialmente, serão estes:
 
- * [https://github.com/felipebastosweb/CorretorImoveisNet](Corretor de Imóveis em MAUI.Net){:target="_blank"}
- * [https://github.com/felipebastosweb/delphi-school-app](Gestão Escolar em Delphi FireMonkey){:target="_blank"}
- * [https://github.com/felipebastosweb/delphi-condominio-app](Gestão de Condomínio){:target="_blank"}
+ * [https://github.com/felipebastosweb/CorretorImoveisNet]("Corretor de Imóveis em MAUI.Net"){:target="_blank"}
+ * [https://github.com/felipebastosweb/delphi-school-app]("Gestão Escolar em Delphi FireMonkey"){:target="_blank"}
+ * [https://github.com/felipebastosweb/delphi-condominio-app]("Gestão de Condomínio"){:target="_blank"}
  * Entre outros ...
 
 
